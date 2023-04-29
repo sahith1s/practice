@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body bgcolor="gray">
+    {% for dict_item in img %}
+    {% for key,value in dict_item.items() %}
+      {% if key==car_name %}
+         <center> <img id="car-images" src={{value}} alt="audi-image"> </center>
+      {% endif %}
+    {% endfor %}
+ {% endfor %}
+    <hr>
+    <h1 align="center"><span>The Current Price of the Car is: Rs {{prediction[0]}}</span></h1>
+    <h1 align="center"><span>Name  of the Car is:  {{details[0]}}</span></h1>
+    <h1 align="center"><span>Model of the Car is:  {{details[1]}}</span></h1>
+    <h1 align="center"><span>Year of Manfacture :  {{details[2]}}</span></h1>
+    <h1 align="center"><span>fuel type is:  {{details[3]}}</span></h1>
+    <h1 align="center"><span>kilometers driven :  {{details[4]}}</span></h1>
+    
+</body>
+</html>

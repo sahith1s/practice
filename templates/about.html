@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HTML</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css') }}"/>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<style>
+    .About-us {
+	  width: 100%;
+	  text-align: center;
+	  background:linear-gradient(120deg,rgba(0, 0, 0, 0.564),rgba(148, 144, 144, 0));
+	  margin-top: 30px;
+	  margin-bottom: 30px;
+	}
+	.heading{
+	  color: red;
+	  font-size: 35px;
+	}
+	.image {
+        margin:20px 0px;
+	  border-radius: 50%;
+      width:330px;
+	}
+	
+	.para {
+        font-weight:bold;
+        margin:20px 0px;
+	  font-size: 20px;
+     
+	} 
+    a{
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: underline;
+        color: aqua;
+    }
+
+
+</style>
+</head>
+<body>
+  <div class="About-us">
+    <h1 class="heading"> About Us </h1>
+	<img class="image" src="https://us.123rf.com/450wm/igoun/igoun1912/igoun191200027/igoun191200027.jpg?ver=6">
+	<p class="para">This App will help you to predict the car prize accurately.</p>
+	<hr>
+	<p class="para">Our predictions are based on the Advanced MachineLearning algorithms.</p>
+    <p class="para">This Website is devloped using ML algorithm <a href="https://en.wikipedia.org/wiki/Linear_regression">LinearRegression</a>.our predictions are most accurate</p>
+    <p class="para">hope you will enjoy the app </p>
+   <h3> follow us on email </h3>
+  <h4> <a href = "mailto:sahithpeela2002@gmail.com?subject = Feedback&body = Message"></h4>
+    mail here
+    </a>
+ 
+  </div>
+</body>
+</html>

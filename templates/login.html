@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LOGIN PAGE!!!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}"/>
+  </head>
+  <body class="b">
+    <div class="center">
+      <h1>Login</h1>
+      <form  method="post" action="http://127.0.0.1:5000/login" >
+        <div   class="txt_field">
+          <input type="text" name = "uname" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div  class="txt_field">
+          <input type="password"  name = "pwd" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <input type="submit" value="Login">
+        <div class="signup_link">
+          Not a member? <a href="/sign_up">Signup</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>

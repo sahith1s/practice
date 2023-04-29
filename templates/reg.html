@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>REGISTRATION PAGE!!!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}" />
+  </head>
+  <body class="b">
+    <div class="center" style="width:550px;">
+      <h1>Register</h1>
+      <form  method="post"  onsubmit="validate()" >
+        <div   class="txt_field">
+          <input type="text" name = "fname" required>
+          <span></span>
+          <label>First Name</label>
+        </div>
+        <div  class="txt_field">
+          <input type="text"  name = "lname" required>
+          <span></span>
+          <label>Last Name</label>
+        </div>
+        <div  class="txt_field">
+            <input type="email"  name = "email" required>
+            <span></span>
+            <label>Email</label>
+        </div>
+        <div  class="txt_field">
+            <input type="password"  name = "pwd" required>
+            <span></span>
+            <label>Password</label>
+        </div>
+        <div  class="txt_field">
+            <input type="password"  name = "rpwd" required>
+            <span></span>
+            <label>Confirm Password</label>
+        </div>
+        
+        <input type="submit" value="Register" onclick="validate()">
+        <div class="signup_link">
+          Already a member? <a href="/login">SignIn Here</a>
+        </div>
+      </form>
+      <dialog id="myDialog">This is a dialog window</dialog>
+    </div>
+
+          {% block javascript %}
+          <script>
+            function validate(){
+              var x=document.getElementById("myDialog");
+               console.log('hi');
+                var ele=document.getElementById('form');
+                element.reset();
+                console.log(registration);
+                if (registration){
+                 x.innerHTML="success"
+                }
+                      
+
+            }
+            
+
+            </script>
+      
+      {% endblock %}
+
+ 
+  </body>
+</html>
