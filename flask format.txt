@@ -1,0 +1,125 @@
+flask format:
+flask is a python webframework used in devloping webpages written in python 
+it works on the top WSGI webserver gateway interface
+wsgi is a standard of universal interface b/w webservers and web applications
+and 
+
+jinja2 templeting language--it is used to combine a template with a datasource so that it reflects on the template/webpage
+
+project format:
+
+static>
+     images>
+         styles>
+            style.css
+
+templates>
+     .html files
+install virtual environemnt to work with python to avoid compatibility issues between the different versions of the libraries 
+
+pip install virtualenv
+Activate venv\scripts\activate
+then pip install flask
+
+.................................................
+
+basic view of flask app
+# importing the module
+from flask import Flask,render_template
+#calling constructor of the class Flask with current ,module i.e __name__
+app=Flask(__name__)
+@app.route('/')
+route() is a decorator function of the class used to determine which url should call in the application
+@app.route('/')
+def helloworld():
+   return "HelloWorld"
+if __name__=='__main__':
+  app.run()
+  app.run(debug=True,port=8080)
+
+----------------------------------------
+variable calling
+
+@app.route('/hello/<name>')
+def hello(name):
+  return "hello %s!",name
+------------------------------------
+Flask HTTP methods:
+GET-sends unencrypted data to the server
+HEAD-sends unencrypted data to the server with out body
+PUT-Replaces target resource with the updated content.
+DELETE -Deletes target resource provided as URL.
+------------------------------------------------------
+render_template('home.html')---> it allows to dynamixally load the template 
+redirect(url_for('home'))
+                    |__>> mfunction name--> navigation b/w the urls based on that routes function
+
+-------------------------------------------------------------
+GET-request data from the server  these are http methods
+POST-send data to the server
+POST requests are used for the online form submisssions
+from flask impoert requests
+if requests.method=='POST"
+
+@app.route('/login',methods=["POST","GET"])
+------------------------------------------------------
+
+jinja2 combine data source with templates
+
+we can send the recieved data from post method from the forms by rendering the template with the dat collected as
+                                    jinja2 variables 
+                                       
+                                       ^
+                                       |
+return render_template('result.html',company=companies,years=years)
+
+in order to use that data in the templates we can use template script of jinja 
+
+which is
+
+{% for company in companies% }
+
+ex:
+details is ana array contains the details of company ,yom,no-of_km_drivrn ,company model
+etc
+{{}}--> accessing jinja variable in the templates
+ <h1 align="center"><span>Name of the Car is: {{details[0]}}</span></h1>
+
+--------------------------------------------------------------
+
+sessions:
+from flask import session
+sessions arre useful whenever it is needed to store the user information  
+and it blocks the user for direct access of the application urls
+whenever user in the session he can access 
+session is like an dictionary objects 
+creating session
+session['user']=user
+
+----------------------
+
+getting data from appliction reg page
+
+request.form.get(fname)
+form <form tag in reg.html>
+get -method
+fname name of the <input type="text" name="fname">
+-------------------------------------------------------
+adding external file sheet to the template in flask app is 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}" />
+
+{{url_for('static',filename="styles/style.css")}}
+
+------------------------------------------------------
+ i used /learned CSS to aid my projects so my scope on css is confiend to my project ani chepu
+----------------------------------------------
+
+flask works by mapping the urls
+
+flask is light weighted
+
+view function in flask execcuted when a specific url is visited/called
+
+
+
+
